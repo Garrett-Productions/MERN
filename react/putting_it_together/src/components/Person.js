@@ -8,13 +8,15 @@ const PersonCard = (props) => {
 // we deconstructing so we can use them independently
 // const [ rentals, setRentals ] = useState(props.portfolioStart);
 
-
+    const handleClick = () => {
+        setAge(age + 1);
+    }
     return(
         <div>
             <h1>{ firstName} { props.lastName }</h1>
             <p>Age:{ age }</p>
             <p>Hair Color: {hairColor}</p>
-            <button onClick = { (event) => setAge(age + 1)}>Birthday Button for {props.firstName} </button>
+            <button onClick = { handleClick }>Birthday Button for {props.firstName} </button>
         </div>
     );
 }

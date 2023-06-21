@@ -1,0 +1,8 @@
+.contentStyles{
+    border: solid lightgrey 2px;
+    margin: 0px auto;
+    width: 250px;
+    height: auto;
+    cursor: pointer;
+    background-color: lightcyan;
+}

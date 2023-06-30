@@ -29,7 +29,7 @@ return startUp;
 
 app.get("/api/users/new", (req,res) => {
     console.log("This is working")
-    res.json(newUser);
+    res.json(brandNewUser);
     console.log("this is my new user!", brandNewUser)
 })
 

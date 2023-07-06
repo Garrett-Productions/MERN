@@ -1,0 +1,57 @@
+test> use my_fiirst_db
+
+my_fiirst_db> db.createCollection('students')
+
+my_fiirst_db> db.users.insert({name: "Garrett", home_state: "IN", lucky_number:1, birthday: {month: 5, day: 16, year: 1994}})
+my_fiirst_db> db.students.find()
+my_fiirst_db> db.students.insert({name: "Charisma", home_state: "CA", lucky_number: 1, birthday: {month: 1, day: 27, year: 2000}})
+my_fiirst_db> db.students.insert({name: "Cole", home_state: "IN", lucky_number: 1, birthday: {month: 2, day: 25, year: 1990}})
+my_fiirst_db> db.students.insert({name: "Debbie", home_state: "IN", lucky_number: 1, birthday: {month: 1, day: 02, year: 1963}})
+my_fiirst_db> db.students.insert({name: "Randy", home_state: "IN", lucky_number: 1, birthday: {month: 11, day: 09, year: 1963}})
+
+my_fiirst_db> db.students.find({}).pretty()
+
+my_fiirst_db> db.students.find({home_state:"CA"})
+
+my_fiirst_db> db.students.find({lucky_number: {$gt: 3}})
+
+my_fiirst_db> db.students.find({lucky_number: {$lte: 10}})
+
+my_fiirst_db> db.students.find({lucky_number: {$gte: 1, $lte: 9}}).pretty()
+
+my_fiirst_db> db.students.updateMany({}, {$set: {interests: ['coding', 'brunch', 'mongo_db']}}, true)
+
+my_fiirst_db> db.students.update({_id: ObjectId("64a5f969e1c289a3f842655b")}, {$set: {interests: ['coding', 'brunch', 'mongo_db']}})
+
+my_fiirst_db> db.students.update({name: 'Randy'}, {$push: {interests: ['guitar']}})
+my_fiirst_db> db.students.update({name: 'Garrett'}, {$push: {interests: ['drinkin_coffee']}})
+my_fiirst_db> db.students.update({name: 'Charisma'}, {$push: {interests: ['serving_food']}})
+my_fiirst_db> db.students.update({name: 'Cole'}, {$push: {interests: ['driving_a_fork_lift']}})
+my_fiirst_db> db.students.update({name: 'Debbie'}, {$push: {interests: ['cooking']}})
+
+my_fiirst_db> db.students.update({name: 'Randy'}, {$push: {interests: 'taxes'}})
+
+my_fiirst_db> db.students.update({name:"Randy"}, {$pull: {interests: 'taxes'}})
+my_fiirst_db> db.students.update({name:"Randy"}, {$pop: {interests: -1}})
+
+my_fiirst_db> db.students.remove({"home_state":"CA"})
+my_fiirst_db> db.students.find()
+
+my_fiirst_db> db.students.remove({name:"Cole"})
+
+my_fiirst_db> db.students.remove({lucky_number: {$gt: 5}}, true)
+
+my_fiirst_db> db.students.updateMany({}, {$set: {number_of_belts: 0}})
+
+my_fiirst_db> db.students.update({home_state: "WA"}, {$set: {number_of_belts: 1}})
+
+
+//update, updateOne, updateMany, didnt work....that's cool.
+
+my_fiirst_db> db.students.replaceOne({number_of_belts: 0},  {belts_earned: 0})
+
+my_fiirst_db> db.students.remove({lucky_number: 1})    ..This removed all my students except one without the lucky number, no bueno
+
+db.students.updateMany({belts_earned: 0}, {$set: {updated_on: new Date()}})
+
+db.students.find()

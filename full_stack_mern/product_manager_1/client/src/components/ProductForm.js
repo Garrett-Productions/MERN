@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-const ProductForm= () => {
+const ProductForm= (props) => {
 
+    const { product, setProduct } = props; //lifted state from main
     const [ title, setTitle ] = useState("")
     const [ price, setPrice ] = useState(0)
     const [ desc, setDesc ] = useState("")
@@ -19,6 +20,7 @@ const ProductForm= () => {
             setTitle("")
             setPrice(0)
             setDesc("")
+            setProduct([...product, res.data]); // this was added after we refactored our ProductList to lift state from main
 
         })
         .catch(err=> console.log(err,"look here for the error mate"))

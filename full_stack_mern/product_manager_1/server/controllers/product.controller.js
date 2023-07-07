@@ -18,6 +18,17 @@ module.exports.getProduct = (req,res) => {
         .catch(err => res.json(err))
 }
 
+module.exports.updateProduct = (req,res) => {
+    Product.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}) // the req.body is what we update, the new:true is so we can pass new info back and it doesnt re render old info
+        .then(updatedProduct => res.json(updatedProduct))
+        .catch(err => console.log(err))
+}
+
+module.exports.deleteProduct = (req, res) => {
+    Product.deleteOne({_id:req.params.id})
+        .then(deletedProduct => res.json(deletedProduct))
+        .catch(err => res.json(err))
+}
 
 
 // this below is for testing purposes before we added the database

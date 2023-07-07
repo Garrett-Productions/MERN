@@ -4,6 +4,7 @@ import axios from 'axios'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Main from './views/Main';
 import OneProduct from './components/OneProduct';
+import ProductUpdate from './components/UpdateProduct';
 // import ProductForm from './components/ProductForm';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route element={<Main/>} path='/products' default /> 
           <Route element={<OneProduct/>} path='/products/:id'/>
+          <Route element={<ProductUpdate/>} path='/products/edit/:id'/>
         {/* <ProductForm /> */}
         </Routes>
     </BrowserRouter>

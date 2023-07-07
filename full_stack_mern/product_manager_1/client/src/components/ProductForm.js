@@ -28,7 +28,7 @@ const ProductForm= (props) => {
 
     return (
         <div style={{margin:"0 auto"}}>
-            <h1>Product Manager</h1>
+            <h1 style={{textDecoration:'underline', color:'darkBlue'}}>Product Manager</h1>
             <form onSubmit={onSubmitHandler}>
                 <label>Title of Product:</label>
                     <input type='text' value={title} onChange={(e)=> setTitle(e.target.value)}/>

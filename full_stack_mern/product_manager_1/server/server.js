@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true })); // allows for JSON objects cont
 
 require('./config/mongoose.config');  // gives connection to our DB and connects our routes
 
-app.use(cors())  
+app.use(cors())
 require('./routes/product.routes')(app); 
-    
+
 app.listen(port, () => console.log(`Listening on port: ${port}`) );

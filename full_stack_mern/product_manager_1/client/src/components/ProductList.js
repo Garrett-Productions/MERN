@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 
 const ProductList = (props) => {
     const { removeFromDom, product, setProduct} = props;
@@ -27,7 +27,7 @@ const ProductList = (props) => {
     return(
         <div>
             {
-                product.map((product, index) => {
+                product.ma~http((product, index) => {
                     return (
                         <div>
                             <h2 key={index}>Product: {product.title}</h2>

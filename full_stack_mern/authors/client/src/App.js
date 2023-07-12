@@ -8,15 +8,16 @@ import {BrowserRouter, Routes, Route,} from 'react-router-dom'
 
 function App() {
 
-  const [authorList, setAuthorlist]= useState([]);
+  const [authorList, setAuthorList]= useState([]);
+  const [errors, setErrors] = useState([]);
   
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route element={<AuthorForm authorList={authorList} setAuthorlist={setAuthorlist}/>} path='/authors'/>
-          <Route element={<DisplayAll authorList={authorList} setAuthorlist={setAuthorlist}/>}path='/'/>
-          <Route element={<UpdateAuthors authorList={authorList} setAuthorlist={setAuthorlist}/>} path='/authors/:id'/>
+          <Route element={<AuthorForm authorList={authorList} setAuthorList={setAuthorList} errors={errors} setErrors={setErrors} />} path='/authors'/>
+          <Route element={<DisplayAll authorList={authorList} setAuthorList={setAuthorList}/>}path='/'/>
+          <Route element={<UpdateAuthors authorList={authorList} setAuthorList={setAuthorList} errors={errors} setErrors={setErrors} />} path='/authors/:id'/>
         </Routes>
       </BrowserRouter>
       </div>
@@ -24,3 +25,4 @@ function App() {
 }
 
 export default App;
+  

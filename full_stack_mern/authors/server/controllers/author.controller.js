@@ -27,13 +27,13 @@ module.exports.getOneAuthor = (req,res) => {
 }
 
 module.exports.updateAuthor = (req,res) => {
-    Author.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}) // the req.body is what we update, the new:true is so we can pass new info back and it doesnt re render old info
-        .then(updatedAuthor => res.json(updatedAuthor))
-        .catch(err => console.log(err))
+    Author.findOneAndUpdate({_id:req.params.id}, req.body, {new:true, runValidators: true}) // the req.body is what we update, the new:true is so we can pass new info back and it doesnt re render old info
+        .then(author =>{ res.status(201).json(author), console.log(res.statusCode)}) // we didn't see the console.log upon the catch from update form so we needed to include runValidators: true
+        .catch(err => {res.status(400).json(err), console.log(err)});
 }
 
-module.exports.deleteAuthor = (req, res) => {
-    Author.deleteOne({_id:req.params.id})
-        .then(deletedAuthor => res.json(deletedAuthor))
-        .catch(err => res.json(err))
-}
+// module.exports.deleteAuthor = (req, res) => {
+//     Author.deleteOne({_id:req.params.id})
+//         .then(deletedAuthor => res.json(deletedAuthor))
+//         .catch(err => res.json(err))
+// }

@@ -6,6 +6,13 @@ import { useNavigate, Link } from 'react-router-dom';
 const DisplayAll = ({authorList, setAuthorList}) => {
     const navigate = useNavigate()
 
+        const handleDelete = (delIndex) => {
+            const filteredAuthors = authorList.filter((author, i) => {
+                console.log(delIndex)
+                return i !== delIndex
+            });
+            setAuthorList(filteredAuthors)
+        }
     useEffect(() => {
         axios.get("http://localhost:8000/api/authors")
             .then((res) => {
@@ -34,7 +41,9 @@ const DisplayAll = ({authorList, setAuthorList}) => {
                                 <tr style={{display:"flex", justifyContent:"space-around"}}>
                                     <td >{author.name}</td>
                                     <Link to={`/authors/${author._id}`}> Edit </Link>
-                                    <Link to={`/authors/${author._id}`}> Delete </Link>
+                                    <button style={{backgroundColor:"blue", color:"white"}}onClick={(e)=> {
+                                        handleDelete(i);
+                                    }}>Delete</button>
                                 </tr>
                             </div>
                             </tbody>

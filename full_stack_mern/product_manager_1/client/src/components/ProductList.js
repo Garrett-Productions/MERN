@@ -27,7 +27,7 @@ const ProductList = (props) => {
     return(
         <div>
             {
-                product.ma~http((product, index) => {
+                product.map((product, index) => {
                     return (
                         <div>
                             <h2 key={index}>Product: {product.title}</h2>

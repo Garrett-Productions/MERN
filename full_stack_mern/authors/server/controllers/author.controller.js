@@ -8,9 +8,11 @@ const Author = require('../models/author.model');
 
 module.exports.createAuthor = (req,res) => {
     Author.create(req.body)
-        .then(author => res.json(author))
-        .catch(err => res.json(err));
+        .then(author =>{ res.status(201).json(author), console.log(res.statusCode)})
+        .catch(err => {res.status(400).json(err), console.log(err)});
 }
+// by default every response will come back as a 200
+// 201 is something we just created
 
 module.exports.getAllAuthors = (req,res) => {
     Author.find()
@@ -20,8 +22,8 @@ module.exports.getAllAuthors = (req,res) => {
 
 module.exports.getOneAuthor = (req,res) => {
     Author.findOne({_id : req.params.id}) // the .id on the right side of our equal sign needs to match our :id, param, within our route
-        .then(author => res.json(author))
-        .catch(err => res.json(err))
+        .then(author =>{ res.status(201).json(author), console.log(res.statusCode)})
+        .catch(err => {res.status(400).json(err), console.log(err)});
 }
 
 module.exports.updateAuthor = (req,res) => {

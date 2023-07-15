@@ -6,8 +6,7 @@ module.exports.createPlayer = (req, res) => {
             console.log("this is my player", player)
             res.json(player)
         })
-        .catch(err => res.json(err)
-    );
+        .catch(err => {res.status(400).json(err), console.log(err)});
 }
 
 module.exports.getAllPlayers = (req,res) => {

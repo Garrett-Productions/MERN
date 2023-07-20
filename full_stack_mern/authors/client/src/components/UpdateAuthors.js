@@ -5,17 +5,13 @@ import {useNavigate, Link, useParams} from 'react-router-dom'
 const UpdateAuthors = ({authorList, setAuthorList, errors, setErrors}) => {
     const { id } = useParams();
     const [name, setName] = useState("");
-    // const [errors, setErrors] = useState([])
     const navigate = useNavigate();
-    // const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
-    // const [isValid, setIsValid] = useState(false)
     
     useEffect(() => {
         axios.get(`http://localhost:8000/api/authors/${id}`)
             .then(res => {
                 console.log("check out my data bro", res.data)
                 setName(res.data.name);
-                // console.log(res.data)
             })
             .catch(err => console.log(err))
     }, [])
@@ -32,8 +28,6 @@ const UpdateAuthors = ({authorList, setAuthorList, errors, setErrors}) => {
             const mappedAuthor = authorList.map((obj) =>
                 ( obj._id == res.data._id ) ? res.data : obj)
             setAuthorList(mappedAuthor)
-            // setIsValid(true)
-            // setHasBeenSubmitted(true)
             navigate('/');
             })
         .catch(err => {

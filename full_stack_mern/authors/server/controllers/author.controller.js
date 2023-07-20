@@ -1,18 +1,10 @@
 const Author = require('../models/author.model');  
 
-// module.exports.index = (request, response) => {  //We are exporting a key:val pair of index : function
-//     response.json({     // This is where we're setting the API's response to the requesting client
-//         message: "Hello World"
-//     });
-// }
-
 module.exports.createAuthor = (req,res) => {
     Author.create(req.body)
         .then(author =>{ res.status(201).json(author), console.log(res.statusCode)})
         .catch(err => {res.status(400).json(err), console.log(err)});
 }
-// by default every response will come back as a 200
-// 201 is something we just created
 
 module.exports.getAllAuthors = (req,res) => {
     Author.find()
@@ -32,8 +24,8 @@ module.exports.updateAuthor = (req,res) => {
         .catch(err => {res.status(400).json(err), console.log(err)});
 }
 
-// module.exports.deleteAuthor = (req, res) => {
-//     Author.deleteOne({_id:req.params.id})
-//         .then(deletedAuthor => res.json(deletedAuthor))
-//         .catch(err => res.json(err))
-// }
+module.exports.deleteAuthor = (req, res) => {
+    Author.deleteOne({_id:req.params.id})
+        .then(deletedAuthor => res.json(deletedAuthor))
+        .catch(err => res.json(err))
+}

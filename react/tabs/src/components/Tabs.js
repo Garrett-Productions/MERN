@@ -2,10 +2,10 @@ import { useState } from 'react'
 import styles from '../css/tab.module.css'
 
 const Tabs = (props) => {
-    const [tabList, setTabList] = useState([]);
     const [tabName, setTabName] = useState("");
-    const [currentTab, setCurrentTab] = useState(0);
     const [tabContent, setTabContent] = useState("")
+    const [tabList, setTabList] = useState([]);
+    const [currentTab, setCurrentTab] = useState(0);
 
 
     const onTabHandle = (e) => {

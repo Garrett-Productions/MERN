@@ -21,10 +21,12 @@ const AxiosPokemonAPI = (event) => {
         <div style={{margin:"0 auto", body:"0 auto", width:250}}>
             <ol>
                 {
-                    pokemonAPI.map((object, index) => {
-                        return (
-                            <li key = {index}>{object.name}</li>
-                        )
+                pokemonAPI.map((object, index) => {
+                    return (<div>
+                        <li key = {index}>{object.name}</li>
+                        <li key = {index}>{object.url}</li>
+                        <hr />
+                        </div>)
                     })
                 }
             </ol>

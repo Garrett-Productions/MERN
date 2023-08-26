@@ -7,11 +7,19 @@ const Form = (props) => {
     const [password, setPassword] = useState("");  
     const [confirmPassword, setConfirmPassword] = useState("");
     const [hasbeenSubmitted, setHasBeenSubmitted] = useState(false);
-    
+
+    const errorMessages = {
+            firstNameError: 'first name must be at least 2 characters in length',
+            lastNameError: 'Last name must be at least 2 characters in length',
+            emailError: 'Email must be at least 5 characters in length',
+            passwordError: 'Password must be at least 8 characters',
+            confirmPasswordError: 'Passwords must match one another',
+        };
     const createUser = (e) => {
         // we must prevent the default refresh of the browser to keep our state from being reset
-        e.preventDefault();
-    
+        e.preventDefault(); // this prevents the default of our refreshing the browser so we can keep our state values
+
+        
         // create a javascript object to hold all of the values
         const newUser = { 
             firstName: firstName, 
@@ -20,13 +28,14 @@ const Form = (props) => {
             password: password,
             confirmPassword: confirmPassword 
         };
-        console.log("Welcome", newUser);
+        console.log("Welcome", newUser.firstName, newUser.lastName);
         setFirstName("");
         setLastName("");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
         setHasBeenSubmitted(true)
+
     };
     return(
         <div style={{margin:"0px auto", padding:"0px auto", boxSizing:"border-box"}}>
@@ -40,8 +49,8 @@ const Form = (props) => {
                     <input type="text" value={firstName} onChange={ (e) => setFirstName(e.target.value) } />
                 </div>
                 {firstName.length < 2 && firstName.length > 0 ? (
-                    <p style={{color:"red"}}>First name must be at least 2 characters</p>
-                ) : null }
+                    <p style={{color:"red"}}>{errorMessages.firstNameError}</p>
+                ) : firstName.length === 0 ? errorMessages.firstNameError ==='': null}
                 <div>
                     <label>Last Name: </label> 
                     <input type="text" value={lastName} onChange={ (e) => setLastName(e.target.value) } />
@@ -53,14 +62,14 @@ const Form = (props) => {
                     <label>Email Address: </label> 
                     <input type="text" value={email} onChange={ (e) => setEmail(e.target.value) } />
                 </div>
-                {email.length < 5 ? (
+                {email.length < 5 && email.length > 0 ? (
                     <p style={{color:"red"}}>Email must be at least 5 characters</p>
                 ) : null}
                 <div>
                     <label>Password: </label>
                     <input type="password" value={password} onChange={ (e) => setPassword(e.target.value) } />
                 </div>
-                {password.length < 8 ? (
+                {password.length < 8 && password.length > 0 ? (
                     <p style={{color:"red"}}>Password must be at least 8 characters</p> 
                 ) : null}
                 <div>

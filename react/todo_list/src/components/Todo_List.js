@@ -49,7 +49,6 @@ const TaskList = (props) => {
             <input 
             type='text' 
             value={todo}  // one way data binding with connecting the getter to the value
-            id=''
             onChange={(event)=> 
                 setTodo(event.target.value)} 
             />

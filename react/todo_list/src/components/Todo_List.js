@@ -64,15 +64,16 @@ const TaskList = (props) => {
             if (todo.complete) {
                 todoClasses.push("line-through");
             }
-
             return (
                 <div key={i} style={{display:'flex', justifyContent:'center', margin:5 }}>
                     <input onChange={(event)=> { toDoTrueOrFalse(i);}} 
                         checked={todo.complete} type='checkbox' />
                     <p className={todoClasses.join(" ")}>{todo.todoKey}</p> 
-                    <button style={{backgroundColor:'lightgrey', borderRadius: 25, marginLeft: 5}} onClick={(event)=> {
+                    <button style={{backgroundColor:'lightgrey', borderRadius: 25, marginLeft: 5}}
+                        onClick={(event)=> {
                         handleToDoDelete(i);
-                    }}>Delete</button>
+                    }}>
+                    Delete</button>
                 </div>
             )})
         };

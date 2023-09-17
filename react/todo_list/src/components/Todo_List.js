@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// comments below
+// comments below here
 // psuedo-code = in order to have a checkmark 'true or false' placed one ach to do item, 
 // we need to create an object for each to-do item upon on our function callback handleToDoSubmit
 // after it prevents default behavior we can create this object, 1 key is equal to our actual todo

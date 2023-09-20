@@ -8,7 +8,7 @@ const People = (props) => {
   const {id, setID} = props;
   const {peepOrPlan, setPeepOrPlan} = props;
   const [starWarsPersonData, setStarWarsPersonData] = useState('')
-  const [hasError, hasSetError] = useState([]);
+  // const [hasError, hasSetError] = useState([]);
 
   const navigate = useNavigate();
 

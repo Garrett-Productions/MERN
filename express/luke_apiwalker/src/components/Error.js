@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const Error = (props) => {
-    const {hasError, hasSetError} = props;
+    // const {hasError, hasSetError} = props;
     const { err } = useParams();
     return (
     <div>

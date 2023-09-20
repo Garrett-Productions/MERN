@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-    <h1 style={{textAlign:'center', margin:"0px auto"}}>Welcome to my Star Wars API!</h1>
+    <h1 style={{textAlign:'center'}}>Welcome to my Star Wars API!</h1>
     <BrowserRouter>
       <Routes>
         <Route element={<Form peepOrPlan={peepOrPlan} setPeepOrPlan={setPeepOrPlan} id={id} setID={setID}/>} path='/' />

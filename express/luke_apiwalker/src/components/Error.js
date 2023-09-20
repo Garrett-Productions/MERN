@@ -12,5 +12,4 @@ const Error = (props) => {
         </div>
     )
 }
-
 export default Error;

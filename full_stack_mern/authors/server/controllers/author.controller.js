@@ -13,7 +13,7 @@ module.exports.getAllAuthors = (req,res) => {
 }
 
 module.exports.getOneAuthor = (req,res) => {
-    Author.findOne({_id : req.params.id}) // the .id on the right side of our equal sign needs to match our :id, param, within our route
+    Author.findOne({_id : req.params.id}) // the .id on the right side of our equal sign needs to match our :id in param, within our route
         .then(author =>{ res.status(201).json(author), console.log(res.statusCode)})
         .catch(err => {res.status(400).json(err), console.log(err)});
 }

@@ -4,11 +4,8 @@ import Form from './Form';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const People = (props) => {
-  const {id, setID} = props;
-  const {peepOrPlan, setPeepOrPlan} = props;
+const People = ({id, setID, peepOrPlan, setPeepOrPlan}) => {
   const [starWarsPersonData, setStarWarsPersonData] = useState('')
-  // const [hasError, hasSetError] = useState([]);
 
   const navigate = useNavigate();
 

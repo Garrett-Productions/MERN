@@ -7,7 +7,7 @@ const Error = (props) => {
     return (
     <div>
         <p style={{textAlign:'center'}}>{err}</p>
-        <img alt='Picture of Obi Wan 'src={require('./obiwan.jpeg')}></img> 
+        <img src={require('./obiwan.jpeg')} alt='Picture of Obi Wan' ></img> 
         <h1 style={{textAlign:'center'}}>THESE AREN'T DROIDS YOU'RE LOOKING FOR!</h1>
         </div>
     )

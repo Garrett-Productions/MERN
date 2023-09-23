@@ -10,7 +10,7 @@ function App() {
   const [petList, setPetList] = useState([]);
 
     const removeFromDom = petId => {
-      setPetList(petList.filter(pet => pet._id !== petId)); // filter method in app.jsx to pass data back to children
+      setPetList(petList.filter(pet => pet._id !== petId)); // filter method in app.jsx to pass data to displayOne and then back up
     }
 
   return (
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element= {<DisplayAll petList = {petList} setPetList={setPetList} /> }/>
           <Route path='/pets/new' element={<CreateOne petList = {petList} setPetList={setPetList}/> }/>
-          <Route path='/pets/:id' element={<DisplayOne removeFromDom={removeFromDom}/>}/>
+          <Route path='/pets/:id' element={<DisplayOne removeFromDom={removeFromDom}/>}/> 
           <Route path='/pet/:id' element={<EditOne petList = {petList} setPetList={setPetList}/>}/>
         </Routes>
       </BrowserRouter>

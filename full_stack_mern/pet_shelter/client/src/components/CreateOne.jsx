@@ -47,7 +47,7 @@ const CreateOne = ({petList, setPetList}) => {
     <div className="md:container md:mx-auto ">
         <div className='flex justify-between'>
             <h1 className='text-6xl'>Pet Shelter</h1>
-            <Link to='/' style={{color:"blue"}}className='underline'>Back Home</Link> 
+            <Link to={'/'} style={{color:"blue"}}className='underline'>Back Home</Link> 
         </div> <br />
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
             <h2 className='text-left mx-20 text-2xl'>Know a pet needing a home?</h2>

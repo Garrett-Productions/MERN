@@ -10,7 +10,7 @@ const EditOne = ({petList, setPetList}) => {
     const [skillOne, setSkillOne] = useState('');
     const [skillTwo, setSkillTwo] = useState('');
     const [skillThree, setSkillThree] = useState('');
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState([]); // to render errors and cap them in a list and loop through to display
     const navigate = useNavigate()
 
     useEffect(() => {

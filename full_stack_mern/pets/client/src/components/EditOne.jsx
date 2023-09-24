@@ -53,7 +53,7 @@ const EditOne = ({petList, setPetList}) => {
             setErrors(err.response.data.errors) // dig into the err.response to find our object
         })
     }
-    
+    // link in the return does not need braces unless parsing params i believe
     return (
         <div className="md:container md:mx-auto ">
             <div className='flex justify-between'>

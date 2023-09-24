@@ -23,7 +23,7 @@ const EditOne = ({petList, setPetList}) => {
             setSkillOne(res.data.skillOne)
             setSkillTwo(res.data.skillTwo)
             setSkillThree(res.data.skillThree)
-            setPetList([...petList, res.data])
+            setPetList([...petList, res.data]) //res is an object, key of data
             console.log(petList)
         })
         .catch(err => console.log(err))

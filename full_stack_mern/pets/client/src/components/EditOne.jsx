@@ -11,7 +11,7 @@ const EditOne = ({petList, setPetList}) => {
     const [skillTwo, setSkillTwo] = useState('');
     const [skillThree, setSkillThree] = useState('');
     const [errors, setErrors] = useState([]); // to render errors and cap them in a list and loop through to display
-    const navigate = useNavigate()
+    const navigate = useNavigate() // to navigate our user our form submission
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/pets/${id}`)

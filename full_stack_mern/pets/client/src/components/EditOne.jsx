@@ -44,7 +44,7 @@ const EditOne = ({petList, setPetList}) => {
             console.log("res data on update here",res.data)
             const mappedPets = petList.map((pet) =>
             ( pet._id == petId ) ? res.data : pet)
-            setPetList(mappedPets)
+            setPetList(mappedPets) // returning a filtered or mapped list after  edits
             console.log(mappedPets)
             navigate('/')
         })

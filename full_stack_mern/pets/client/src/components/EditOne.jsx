@@ -53,6 +53,7 @@ const EditOne = ({petList, setPetList}) => {
             setErrors(err.response.data.errors) // dig into the err.response to find our object
         })
     }
+    // I can cond render errors w  ternary
     // link in the return does not need braces unless parsing params i believe
     return (
         <div className="md:container md:mx-auto ">
@@ -66,7 +67,7 @@ const EditOne = ({petList, setPetList}) => {
             </div>
             <br />
             <div style={{width:"700px", border: "1px solid black", margin:"0 auto"}}>
-                    {errors.name ? <p style={{color:"red"}}>{errors.name.message}</p> : null}
+                    {errors.name ? <p style={{color:"red"}}>{errors.name.message}</p> : null} 
                     {errors.type ? <p style={{color:"red"}}>{errors.type.message}</p> : null}
                     {errors.description ? <p style={{color:"red"}}>{errors.description.message}</p> : null}
                 <form onSubmit={onUpdate} style={{margin:"15px"}}>

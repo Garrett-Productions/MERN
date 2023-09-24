@@ -50,7 +50,7 @@ const EditOne = ({petList, setPetList}) => {
         })
         .catch(err => {
             console.log("there must be an error, check it", err.response.data)
-            setErrors(err.response.data.errors)
+            setErrors(err.response.data.errors) // dig into the err.response to find our object
         })
     }
     

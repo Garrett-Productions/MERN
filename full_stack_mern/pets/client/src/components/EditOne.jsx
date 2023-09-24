@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 
 const EditOne = ({petList, setPetList}) => {
-    const {id} = useParams();
+    const {id} = useParams(); //deconstructing from params
     const [name, setName] = useState('');
     const [type, setType] = useState('');
     const [description, setDescription] =useState('');

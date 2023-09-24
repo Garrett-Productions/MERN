@@ -32,7 +32,7 @@ const EditOne = ({petList, setPetList}) => {
     const onUpdate = (e, petId) => {
         e.preventDefault();
         axios.patch(`http://localhost:8000/api/pets/${id}`,
-        {
+        { // short hand capuring in state
             name,
             type,
             description,

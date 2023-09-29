@@ -79,6 +79,6 @@ const TaskList = (props) => {
             )})
         };
     </div>
-);}
+)}
 
 export default TaskList;

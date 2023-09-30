@@ -29,7 +29,7 @@ const DisplayOne = ({removeFromDom}) => {
 
     const handleLikeClick = () => {
         setLikes(likes + 1);
-        setShow(false)
+        setShow(false) // incorporate this in my new project
         }
 
     return (

@@ -9,7 +9,7 @@ const Main = (props) => {
     const removeFromDom = productId => {
         setProduct(product.filter(product => product._id !== productId));
     }
-//since we added dlete function in main we need to pass it in to our components
+
 return (
     <div>
         <ProductForm product={product} setProduct={setProduct} />

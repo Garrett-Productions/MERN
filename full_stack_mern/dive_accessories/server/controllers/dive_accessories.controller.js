@@ -6,7 +6,7 @@ module.exports.createAccessory = (req,res) => {
         .catch(err => {res.status(400).json(err), console.log(err)});
 }
 
-module.exports.getAllAccessoriess = (req,res) => {
+module.exports.getAllAccessories = (req,res) => {
     DiveAccessories.find()
         .then(accessoriess => res.json(accessoriess))
         .catch(err => res.json(err))

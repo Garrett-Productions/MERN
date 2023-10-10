@@ -1,4 +1,4 @@
-const DiveAccessories = require('../models/author.model');  
+const DiveAccessories = require('../models/dive_accessories.model');  
 
 module.exports.createAccessory = (req,res) => {
     DiveAccessories.create(req.body)
@@ -12,7 +12,7 @@ module.exports.getAllAccessories = (req,res) => {
         .catch(err => res.json(err))
 }
 
-// module.exports.getOneAuthor = (req,res) => {
+// module.exports.getOneAccessory = (req,res) => {
 //     Author.findOne({_id : req.params.id}) // the .id on the right side of our equal sign needs to match our :id in param, within our route
 //         .then(author =>{ res.status(201).json(author), console.log(res.statusCode)})
 //         .catch(err => {res.status(400).json(err), console.log(err)});

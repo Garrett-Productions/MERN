@@ -17,7 +17,7 @@ const ProductForm= (props) => {
         .then(res => {
             console.log(res)
             console.log(res.data, "this is my data, look here") //tracking our data
-            setTitle("")
+            setTitle("")//
             setPrice(0)
             setDesc("")
             setProduct([...product, res.data]); // this was added after we refactored our ProductList to lift state from main

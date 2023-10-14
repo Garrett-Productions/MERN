@@ -12,11 +12,11 @@ const ProductForm= (props) => {
         axios.post('http://localhost:8000/api/product', {
             title,
             price,
-            desc // shorthand syntax que funciona perfectamente bien
+            desc 
         })
         .then(res => {
             console.log(res)
-            console.log(res.data, "this is my data, look here") //tracking our data
+            console.log(res.data, "this is my data, look here")
             setTitle("")//
             setPrice(0)
             setDesc("")

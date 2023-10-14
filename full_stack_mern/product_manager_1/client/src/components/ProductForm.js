@@ -16,7 +16,7 @@ const ProductForm= (props) => {
         })
         .then(res => {
             console.log(res)
-            console.log(res.data, "this is my data, look here")
+            console.log(res.data, "this is my data, look here") //tracking our data
             setTitle("")//
             setPrice(0)
             setDesc("")

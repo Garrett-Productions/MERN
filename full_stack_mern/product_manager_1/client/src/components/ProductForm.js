@@ -20,7 +20,7 @@ const ProductForm= (props) => {
             setTitle("")//
             setPrice(0)
             setDesc("")
-            setProduct([...product, res.data]); // this was added after we refactored our ProductList to lift state from main
+            setProduct([...product, res.data]); 
 
         })
         .catch(err=> console.log(err,"look here for the error mate"))

@@ -2,10 +2,10 @@ import React from 'react'
 import { FaDribbbleSquare, FaFacebookSquare, FaGithubSquare, FaInstagram, FaTwitterSquare } from 'react-icons/fa'
 
 const Footer = () => {
-  return (
+    return (
     <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
         <div>
-            <h1 className='text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4'>React</h1>
+            <h1 className='text-[#00df9a] text-3xl font-bold flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4'>React</h1>
             <p className='py-4'>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                 Sit harum maxime eaque doloribus cum minus quis quaerat. 
@@ -67,7 +67,6 @@ const Footer = () => {
             </ul>
         </div>
         </div>
-
     </div>
   )
 }

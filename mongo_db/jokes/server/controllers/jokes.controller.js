@@ -2,7 +2,6 @@ const Joke = require('../models/jokes.model')
 
 module.exports.createNewJoke = (req,res) => {
     Joke.create(req.body)
-    // console.log("look here for the body of my request", req.body)
     .then(newJoke => {
         res.json({joke: newJoke})
         console.log("this is my", newJoke)

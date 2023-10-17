@@ -35,11 +35,9 @@ const Form = (props) => {
     }
     return (
         <div>
-            <form onSubmit={(event) => {
-                handleToDoSubmit(event)
-            }}>
+            <form onSubmit={(event) => {handleToDoSubmit(event)}}>
                 <input type='text' onChange={(event) => setToDo(event.target.value)} value={toDo}>
-                </input>
+</input>
                 <button>Add todo</button>
             </form>
             <hr />

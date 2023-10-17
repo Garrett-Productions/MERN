@@ -30,7 +30,7 @@ const Cards = () => {
                 </div>
                 <button className='bg-black text-[#00df9a] w-[200px] rounded-full font-medium my-6 mx-auto px-6 py-3'>Start Trial</button>
             </div>
-            <div className='w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-200'>
+            <div className='w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-800'>
                 <img className='w-20 mx-auto mt-[-3rem] bg-white' src={Triple} alt="triple" />
                 <h2 className='text-2xl font-bold text-center py-8'>Single User</h2>
                 <p className='text-center text-4xl font-bold'>$149</p>

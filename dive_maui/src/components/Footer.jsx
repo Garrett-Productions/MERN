@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           </div>
           <div className='w-full bg-black'>
-            <p class="py-4 text-center text-white italic">Copy right 2023 @ By Garrett Turner All Rights Reserved</p>
+            <p class="py-4 text-center text-white italic">Copy right 2023 @ By Garrett Turner. All Rights Reserved</p>
           </div>
     </>
   )

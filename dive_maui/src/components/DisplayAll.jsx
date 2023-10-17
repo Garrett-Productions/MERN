@@ -8,10 +8,12 @@ const DisplayAll = () => {
     const [term, setTerm] = useState('snorkel')
 
     useEffect(() => {
-        fetch(`https://pixabay.com/api/?key=${import.meta.env.VITE_API_KEY}&q=${term}&image_type=photo&pretty=true`)
-        .then(res => res.json())
-        .then(data => {
-            setImages(data.hits);
+        fetch(`https://pixabay.com/api/?key=${import.meta.env.VITE_API_KEY}&q=${term}&category=places&pretty=true`)
+        .then((res) => {
+            res.json()
+            console.log(res)
+            setImages(res.hits);
+            console.log(images)
             setIsLoading(false);
         })
         .catch(err => console.log(data))
@@ -19,7 +21,7 @@ const DisplayAll = () => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg w-60 ">
-        <img src='https://source.unsplash.com/random' alt='' className='w-half'/>
+        <img src='https://source.unsplash.com/random' alt='filtered_photo' className='w-half'/>
         <div className="px-6 py-4">
             <div className="font-bold text-gray-200 text-xl mb-2">
                 Scuba Mask
@@ -43,4 +45,4 @@ const DisplayAll = () => {
   )
 }
 
-export default DisplayAll
+export default DisplayAll;

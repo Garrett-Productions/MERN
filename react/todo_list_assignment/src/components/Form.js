@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = (props) => {
+const Form = () => {
     const [toDo, setToDo] = useState("");
     const [toDoList, setToDoList] = useState([]);
 
@@ -18,9 +18,7 @@ const Form = (props) => {
     }
 
     const handleToDoDelete = (indexToDelete) => {
-        const remainingToDos = toDoList.filter((toDo,i) => {
-            return i !== indexToDelete;
-        });
+        const remainingToDos = toDoList.filter((toDo,i) =>  i !== indexToDelete);
         setToDoList(remainingToDos)
     }
 
@@ -54,7 +52,7 @@ const Form = (props) => {
                             }} type='checkbox' checked={toDo.done} 
                             />
                             <span className={toDoStyles.join(" ")}>{toDo.toDoKey}</span>
-                        <button onClick={(event) => {handleToDoDelete(i);
+                        <button onClick={() => {handleToDoDelete(i);
                         }}>Delete</button>
                         </div>
                     )})

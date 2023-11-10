@@ -8,7 +8,7 @@ const Form = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate(`/${peepOrPlan}/${id}`); //back ticks to parse variables into our stringg
+        navigate(`/${peepOrPlan}/${id}`); // to parse variables into our stringg
     };
 
     return (

@@ -10,7 +10,7 @@ function App() {
   const [petList, setPetList] = useState([]);
 
     const removeFromDom = petId => {
-      setPetList(petList.filter(pet => pet._id !== petId)); // filter method in app.jsx to pass data to displayOne and then back up
+      setPetList(petList.filter(pet => pet._id !== petId)); 
     }
 
   return (

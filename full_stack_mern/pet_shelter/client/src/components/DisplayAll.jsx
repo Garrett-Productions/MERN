@@ -3,7 +3,7 @@ import React, { useEffect} from 'react';
 import axios from 'axios';
 
 const DisplayAll = ({petList, setPetList}) => {
-
+// test with postman
     useEffect(()=> {
         axios.get('http://localhost:8000/api/pet')
         .then((res) => {
